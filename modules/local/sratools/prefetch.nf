@@ -1,7 +1,8 @@
 process SRATOOLS_PREFETCH {
     tag "${sra_accession[0]}"
     label 'process_single'
-    container "https://depot.galaxyproject.org/singularity/sra-tools:3.0.7--h9f5acd7_0"
+    #container "https://depot.galaxyproject.org/singularity/sra-tools:3.0.7--h9f5acd7_0"
+    container "quay.io/biocontainers/sra-tools:3.0.3--h87f3376_0"
 
     input:
     val(sra_accession)
