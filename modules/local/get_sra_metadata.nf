@@ -2,9 +2,7 @@ process ENTREZDIRECT_ESEARCH {
     tag "${meta.id}"
     label 'process_single'
     maxForks 3
-    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/entrez-direct:16.2--he881be0_1':
-        'quay.io/biocontainers/entrez-direct:16.2--he881be0_1' }"
+    container "${ 'quay.io/biocontainers/entrez-direct:16.2--he881be0_1' }"
 
     input:
     tuple val(meta), path(sra_folder)
